@@ -1,0 +1,11 @@
+.demo {
+    display: grid;
+    grid-column: 12fr;
+    grid-row: 12fr;
+}
+
+.div1{
+    background-color: aqua;
+    grid-column: 11/12 ;
+    grid-row: 3/12;
+}
