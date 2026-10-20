@@ -4,56 +4,80 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cantina</title>
-    <link rel="stylesheet" href="CSS/style.css" />
-    <link rel="stylesheet" href="CSS/variable.css" />
-
+    <link rel="stylesheet" href="CSS/output.css" />
   </head>
   <body>
     <header>
-      <div class="en-tete-page">
-        <a href="index.html" class="logo">
-          <img src="assets/logo.png" alt="logo" id="logo" />
-        </a>
-
+      <div>
         <nav aria-label="Navigation principale">
           <ul class="menu">
-            <li><a href="index.html" class="lien-actif">Accueil</a></li>
+            <li>
+              <a href="index.html">
+                <img src="assets/logo.png" alt="logo" />
+              </a>
+            </li>
           </ul>
         </nav>
       </div>
     </header>
 
-    <main>
+    <main class="grid grid-cols-12 grid-rows-12 gap-4 p-5">
 
-      <section id="planning">
+      <section class="col-span-13 row-span-1">
+        <h1>Statistique</h1>
+      </section>
+
+      <section class="col-span-9 row-span-6">
         <h1>Planning</h1>
+        <div class="grid grid-cols-5 justify-between items-start h-11/12">
+          <h4 class="bg-amber-300">Lundi</h4>
+          <h4 class="bg-amber-500">Mardi</h4>
+          <h4 class="bg-amber-600">Mercredi</h4>
+          <h4 class="bg-amber-700">Jeudi</h4>
+          <h4 class="bg-amber-800">Vendredi</h4>
+        </div>
       </section>
 
-      <section id="recettes">
+      <section class="col-span-9 row-span-3">
         <h1>Recettes</h1>
-        <article class="entree">
-          <h2>Entrée</h2>
-        </article>
+        <div class="grid grid-cols-3 justify-around items-start h-11/12 gap-2">
+          <article class="bg-blue-400 rounded-2xl">
+            <div class="m-2">
+              <h2>Entrée</h2>
+              <div>
+                <h4>Velouté de légumes</h4>
+              </div>
+            </div>
+          </article>
 
-        <article class="plat-principal">
-          <h2>Plat Principal</h2>
-        </article>
+          <article class="bg-blue-500 rounded-2xl">
+            <div class="m-2">
+              <h2>Plat Principal</h2>
+              <div>
+                <h4>Tajine de poulet </h4>
+              </div>
+            </div>
+          </article>
 
-        <article class="dessert">
-          <h2>Dessert</h2>
-        </article>
-
+          <article class="bg-blue-600 rounded-2xl">
+            <div class="m-2">
+              <h2>Dessert</h2>
+              <div>
+                <h4>Fruits de saison</h4>
+              </div>
+            </div>
+          </article>
+        </div>
       </section>
 
-      <section id="mon-repas">
+      <section class="row-start-2 row-end-13 col-start-10 col-end-13">
         <h1>Mon repas</h1>
       </section>
-
     </main>
 
     <footer>
       <div class="pied-page">
-        <img src="assets/logo.png" alt="Logo"/>
+        <img src="assets/logo.png" alt="Logo" />
       </div>
     </footer>
   </body>
