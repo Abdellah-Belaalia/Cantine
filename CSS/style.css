@@ -1,11 +1,13 @@
-.demo {
-    display: grid;
-    grid-column: 12fr;
-    grid-row: 12fr;
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
 }
 
-.div1{
-    background-color: aqua;
-    grid-column: 11/12 ;
-    grid-row: 3/12;
+html {
+
+}
+
+.en-tete-page {
+    background-color: rgb(74, 177, 74);
 }
