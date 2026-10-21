@@ -6,14 +6,14 @@
     <title>Cantina</title>
     <link rel="stylesheet" href="CSS/output.css" />
   </head>
-  <body class="bg-[#FFFBE6]">
+  <body class="bg-[#F9F9F6] font-sans font-bold">
     <header>
       <div>
         <nav aria-label="Navigation principale">
           <ul class="menu">
             <li>
               <a href="index.html">
-                <img src="assets/logo.png" alt="logo" />
+                <img src="assets/logo.png" alt="logo" class="w-48" />
               </a>
             </li>
           </ul>
@@ -26,57 +26,82 @@
         <h1>Statistique</h1>
       </section>
 
-      <section class="shadow-2xl rounded-4xl p-4 m-2">
+      <section class="shadow-2xl rounded-4xl p-4 m-2 h-fit">
         <h1 class="text-5xl p-2">Planning</h1>
 
         <div
           class="flex flex-wrap justify-center items-start h-11/12 gap-4 p-2 md:justify-around lg:justify-around"
         >
-          <article class="rounded-3xl p-2 bg-[#C0EBA6]">
-            <h4 class="rounded-2xl text-center p-2 text-white">Lundi</h4>
+          <article class="rounded-3xl p-2 bg-[#E8F3E8]">
+            <h4 class="rounded-2xl text-center text-2xl p-2 text-[#2E5339]">
+              Lundi
+            </h4>
             <p class="p-1">Ajouter votre repas</p>
             <div class="flex flex-col items-center">
-              <button type="button" class="border-2 rounded-2xl bg-[#347928] p-2 text-white">
+              <button
+                type="button"
+                class="border-2 rounded-2xl bg-[#347928] p-2 text-white"
+              >
+                Assigner
+              </button>
+            </div>
+          </article>
+
+          <article class="rounded-3xl p-2 bg-[#E8F3E8]">
+            <h4 class="rounded-2xl text-center text-2xl p-2 text-[#2E5339]">
+              Mardi
+            </h4>
+            <p class="p-1">Ajouter votre repas</p>
+            <div class="flex flex-col items-center">
+              <button
+                type="button"
+                class="border-2 rounded-2xl bg-[#347928] p-2 text-white"
+              >
                 Assigné
               </button>
             </div>
           </article>
 
-          <article class="rounded-2xl text-center p-2 bg-[#C0EBA6]">
-            <h4 class="rounded-2xl text-center p-2 text-white">Mardi</h4>
+          <article class="rounded-3xl p-2 bg-[#E8F3E8]">
+            <h4 class="rounded-2xl text-center text-2xl p-2 text-[#2E5339]">
+              Mercredi
+            </h4>
             <p class="p-1">Ajouter votre repas</p>
             <div class="flex flex-col items-center">
-              <button type="button" class="border-2 rounded-2xl bg-[#347928] p-2 text-white">
+              <button
+                type="button"
+                class="border-2 rounded-2xl bg-[#347928] p-2 text-white"
+              >
                 Assigné
               </button>
             </div>
           </article>
 
-          <article class="rounded-2xl text-center p-2 bg-[#C0EBA6]">
-            <h4 class="rounded-2xl text-center p-2 text-white">Mercredi</h4>
+          <article class="rounded-3xl p-2 bg-[#E8F3E8]">
+            <h4 class="rounded-2xl text-center text-2xl p-2 text-[#2E5339]">
+              Jeudi
+            </h4>
             <p class="p-1">Ajouter votre repas</p>
             <div class="flex flex-col items-center">
-              <button type="button" class="border-2 rounded-2xl bg-[#347928] p-2 text-white">
+              <button
+                type="button"
+                class="border-2 rounded-2xl bg-[#347928] p-2 text-white"
+              >
                 Assigné
               </button>
             </div>
           </article>
 
-          <article class="bg-[#C0EBA6] rounded-3xl p-2">
-            <h4 class="rounded-2xl text-center p-2 text-white">Jeudi</h4>
+          <article class="rounded-3xl p-2 bg-[#E8F3E8]">
+            <h4 class="rounded-2xl text-center text-2xl p-2 text-[#2E5339]">
+              Vendredi
+            </h4>
             <p class="p-1">Ajouter votre repas</p>
             <div class="flex flex-col items-center">
-              <button type="button" class="border-2 rounded-2xl bg-[#347928] p-2 text-white">
-                Assigné
-              </button>
-            </div>
-          </article>
-
-          <article class="bg-[#C0EBA6] rounded-3xl p-2">
-            <h4 class="rounded-2xl text-center p-2 text-white">Vendredi</h4>
-            <p class="p-1">Ajouter votre repas</p>
-            <div class="flex flex-col items-center">
-              <button type="button" class="border-2 rounded-2xl bg-[#347928] p-2 text-white">
+              <button
+                type="button"
+                class="border-2 rounded-2xl bg-[#347928] p-2 text-white"
+              >
                 Assigné
               </button>
             </div>
@@ -90,8 +115,10 @@
         <div
           class="flex flex-wrap justify-center items-center h-11/12 gap-4 p-2 md:justify-between lg:justify-between"
         >
-          <article class="bg-[#C0EBA6] rounded-3xl p-2">
-            <h4 class="rounded-2xl text-center p-2 text-white">Repas N°</h4>
+          <article class="bg-[#E8F3E8] rounded-3xl p-2">
+            <h4 class="rounded-2xl text-center text-2xl p-2 text-[#2E5339]">
+              Repas N°
+            </h4>
             <div class="p-2">
               <form class="flex flex-col justify-start text-justify p-1">
                 <label for="recette">Ajouter un Entrée:</label>
@@ -136,8 +163,8 @@
               </div>
             </div>
           </article>
-          <article class="bg-[#C0EBA6] rounded-3xl p-2">
-            <h4 class="text-white rounded-2xl text-center p-2">Repas N°</h4>
+          <article class="bg-[#E8F3E8] rounded-3xl p-2">
+            <h4 class="text-2xl p-2 text-[#2E5339]">Repas N°</h4>
             <div class="p-2">
               <form class="flex flex-col justify-start text-justify p-1">
                 <label for="recette">Ajouter un Entrée:</label>
@@ -182,8 +209,10 @@
               </div>
             </div>
           </article>
-          <article class="bg-[#C0EBA6] rounded-3xl p-2">
-            <h4 class="text-white rounded-2xl text-center p-2">Repas N°</h4>
+          <article class="bg-[#E8F3E8] rounded-3xl p-2">
+            <h4 class="rounded-2xl text-center text-2xl p-2 text-[#2E5339]">
+              Repas N°
+            </h4>
             <div class="p-2">
               <form class="flex flex-col justify-start text-justify p-1">
                 <label for="recette">Ajouter un Entrée:</label>
@@ -228,8 +257,10 @@
               </div>
             </div>
           </article>
-          <article class="bg-[#C0EBA6] rounded-3xl p-2">
-            <h4 class="text-white rounded-2xl text-center p-2">Repas N°</h4>
+          <article class="bg-[#E8F3E8] rounded-3xl p-2">
+            <h4 class="rounded-2xl text-center text-2xl p-2 text-[#2E5339]">
+              Repas N°
+            </h4>
             <div class="p-2">
               <form class="flex flex-col justify-start text-justify p-1">
                 <label for="recette">Ajouter un Entrée:</label>
@@ -274,9 +305,10 @@
               </div>
             </div>
           </article>
-
-          <article class="bg-[#C0EBA6] rounded-3xl p-2">
-            <h4 class="text-white rounded-2xl text-center p-2">Repas N°</h4>
+          <article class="bg-[#E8F3E8] rounded-3xl p-2">
+            <h4 class="rounded-2xl text-center text-2xl p-2 text-[#2E5339]">
+              Repas N°
+            </h4>
             <div class="p-2">
               <form class="flex flex-col justify-start text-justify p-1">
                 <label for="recette">Ajouter un Entrée:</label>
@@ -324,39 +356,45 @@
         </div>
       </section>
 
-      <section class="rounded-4xl p-4 m-2 h-fit">
-        <div class="flex justify-between p-2">
+      <section class="shadow-2xl rounded-4xl p-4 m-2 h-fit">
+        <div class="flex justify-between p-2 flex-wrap gap-2">
           <h1 class="text-5xl">Recettes</h1>
-          <button type="button" class="border-2 rounded-b-2xl bg-amber-500 p-2">
+          <button
+            type="button"
+            class="border rounded-b-2xl bg-[#D99B08] p-4 text-[#111111] w-40 text-4xl"
+          >
             Ajouter
           </button>
         </div>
         <div class="grid gap-4 p-2">
-          <article class="bg-blue-500 rounded-2xl p-2 gap-4 h-fit">
-            <h2 class="p-2">Les entrées</h2>
+          <article class="rounded-2xl p-2 gap-4 h-fit bg-[#E8F3E8]">
+            <h2 class="p-2 text-4xl text-[#2E5339]">Les entrées</h2>
             <div class="md:flex">
               <div
-                class="text-2xl bg-amber-50 rounded-2xl flex-col p-2 m-2 w-fit"
+                class="text-2xl rounded-2xl flex flex-col p-2 m-2 w-fit bg-[#F8FAFC] font-bold text-[#333333]"
               >
                 <img
                   src="assets/images/veloute.jpg"
                   alt=""
-                  class="rounded-2xl w-256 p-2 h-42"
+                  class="rounded-2xl w-5xl p-2 h-42"
                 />
-                <h4>Velouté de légumes</h4>
-                <span>Prix</span>
-                <span>5DH</span>
-                <p>Végétarien</p>
+                <div class="p-2">
+                  <h4>Velouté de légumes</h4>
+                  <span>Prix</span>
+                  <span>5DH</span>
+                  <p>Végétarien</p>
+                </div>
+
                 <div class="flex justify-between items-center p-2">
                   <button
                     type="button"
-                    class="border-2 rounded bg-emerald-500 p-0.5 text-lg"
+                    class="border rounded bg-[#277A3E] p-3 text-lg align-middle text-white"
                   >
                     Modifier
                   </button>
                   <button
                     type="button"
-                    class="border-2 rounded bg-red-500 p-0.5 text-lg"
+                    class="border rounded bg-[#C92A2A] p-3 text-lg text-white align-middle"
                   >
                     Supprimer
                   </button>
@@ -364,27 +402,29 @@
               </div>
 
               <div
-                class="text-2xl bg-amber-50 rounded-2xl flex-col p-2 m-2 w-fit"
+                class="flex text-2xl rounded-2xl flex-col p-2 m-2 w-fit bg-[#F8FAFC] font-bold text-[#333333]"
               >
                 <img
                   src="assets/images/veloute.jpg"
                   alt=""
-                  class="rounded-2xl w-256 p-2 h-42"
+                  class="rounded-2xl w-5xl p-2 h-42"
                 />
-                <h4>Velouté de légumes</h4>
-                <span>Prix</span>
-                <span>5DH</span>
-                <p>Végétarien</p>
+                <div class="p-2">
+                  <h4>Velouté de légumes</h4>
+                  <span>Prix</span>
+                  <span>5DH</span>
+                  <p>Végétarien</p>
+                </div>
                 <div class="flex justify-between items-center p-2">
                   <button
                     type="button"
-                    class="border-2 rounded bg-emerald-500 p-0.5 text-lg"
+                    class="border rounded bg-[#277A3E] p-3 text-lg align-middle text-white"
                   >
                     Modifier
                   </button>
                   <button
                     type="button"
-                    class="border-2 rounded bg-red-500 p-0.5 text-lg"
+                    class="border rounded bg-[#C92A2A] p-3 text-lg text-white align-middle"
                   >
                     Supprimer
                   </button>
@@ -392,27 +432,29 @@
               </div>
 
               <div
-                class="text-2xl bg-amber-50 rounded-2xl flex-col p-2 m-2 w-fit"
+                class="text-2xl rounded-2xl flex flex-col p-2 m-2 w-fit bg-[#F8FAFC] font-bold text-[#333333]"
               >
                 <img
                   src="assets/images/veloute.jpg"
                   alt=""
-                  class="rounded-2xl w-256 p-2 h-42"
+                  class="rounded-2xl w-5xl p-2 h-42"
                 />
-                <h4>Velouté de légumes</h4>
-                <span>Prix</span>
-                <span>5DH</span>
-                <p>Végétarien</p>
+                <div class="p-2">
+                  <h4>Velouté de légumes</h4>
+                  <span>Prix</span>
+                  <span>5DH</span>
+                  <p>Végétarien</p>
+                </div>
                 <div class="flex justify-between items-center p-2">
                   <button
                     type="button"
-                    class="border-2 rounded bg-emerald-500 p-0.5 text-lg"
+                    class="border rounded bg-[#277A3E] p-3 text-lg align-middle text-white"
                   >
                     Modifier
                   </button>
                   <button
                     type="button"
-                    class="border-2 rounded bg-red-500 p-0.5 text-lg"
+                    class="border rounded bg-[#C92A2A] p-3 text-lg text-white align-middle"
                   >
                     Supprimer
                   </button>
@@ -421,31 +463,34 @@
             </div>
           </article>
 
-          <article class="bg-blue-500 rounded-2xl p-2 gap-4 h-fit">
-            <h2 class="p-2">Plat Principal</h2>
+          <article class="rounded-2xl p-2 gap-4 h-fit bg-[#E8F3E8]">
+            <h2 class="p-2 text-4xl text-[#2E5339]">Plat Principal</h2>
             <div class="md:flex">
               <div
-                class="text-2xl bg-amber-50 rounded-2xl flex-col p-2 m-2 w-fit"
+                class="text-2xl rounded-2xl flex flex-col p-2 m-2 w-fit bg-[#F8FAFC] font-bold text-[#333333]"
               >
                 <img
                   src="assets/images/tajine.jpg"
                   alt=""
-                  class="rounded-2xl w-256 p-2 h-42"
+                  class="rounded-2xl w-5xl p-2 h-42"
                 />
-                <h4>Tajine de poulet</h4>
-                <span>Prix</span>
-                <span>25DH</span>
-                <p>Classique</p>
+                <div class="p-2">
+                  <h4>Tajine de poulet</h4>
+                  <span>Prix</span>
+                  <span>25DH</span>
+                  <p>Classique</p>
+                </div>
+
                 <div class="flex justify-between items-center p-2">
                   <button
                     type="button"
-                    class="border-2 rounded bg-emerald-500 p-0.5 text-lg"
+                    class="border rounded bg-[#277A3E] p-3 text-lg align-middle text-white"
                   >
                     Modifier
                   </button>
                   <button
                     type="button"
-                    class="border-2 rounded bg-red-500 p-0.5 text-lg"
+                    class="border rounded bg-[#C92A2A] p-3 text-lg text-white align-middle"
                   >
                     Supprimer
                   </button>
@@ -453,27 +498,29 @@
               </div>
 
               <div
-                class="text-2xl bg-amber-50 rounded-2xl flex-col p-2 m-2 w-fit"
+                class="text-2xl rounded-2xl flex flex-col p-2 m-2 w-fit bg-[#F8FAFC] font-bold text-[#333333]"
               >
                 <img
                   src="assets/images/tajine.jpg"
                   alt=""
-                  class="rounded-2xl w-256 p-2 h-42"
+                  class="rounded-2xl w-5xl p-2 h-42"
                 />
-                <h4>Tajine de poulet</h4>
-                <span>Prix</span>
-                <span>25DH</span>
-                <p>Classique</p>
+                <div class="p-2">
+                  <h4>Tajine de poulet</h4>
+                  <span>Prix</span>
+                  <span>25DH</span>
+                  <p>Classique</p>
+                </div>
                 <div class="flex justify-between items-center p-2">
                   <button
                     type="button"
-                    class="border-2 rounded bg-emerald-500 p-0.5 text-lg"
+                    class="border rounded bg-[#277A3E] p-3 text-lg align-middle text-white"
                   >
                     Modifier
                   </button>
                   <button
                     type="button"
-                    class="border-2 rounded bg-red-500 p-0.5 text-lg"
+                    class="border rounded bg-[#C92A2A] p-3 text-lg text-white align-middle"
                   >
                     Supprimer
                   </button>
@@ -481,27 +528,29 @@
               </div>
 
               <div
-                class="text-2xl bg-amber-50 rounded-2xl flex-col p-2 m-2 w-fit"
+                class="text-2xl rounded-2xl flex flex-col p-2 m-2 w-fit bg-[#F8FAFC] font-bold text-[#333333]"
               >
                 <img
                   src="assets/images/tajine.jpg"
                   alt=""
-                  class="rounded-2xl w-256 p-2 h-42"
+                  class="rounded-2xl w-5xl p-2 h-42"
                 />
-                <h4>Tajine de poulet</h4>
-                <span>Prix</span>
-                <span>25DH</span>
-                <p>Classique</p>
+                <div class="p-2">
+                  <h4>Tajine de poulet</h4>
+                  <span>Prix</span>
+                  <span>25DH</span>
+                  <p>Classique</p>
+                </div>
                 <div class="flex justify-between items-center p-2">
                   <button
                     type="button"
-                    class="border-2 rounded bg-emerald-500 p-0.5 text-lg"
+                    class="border rounded bg-[#277A3E] p-3 text-lg align-middle text-white"
                   >
                     Modifier
                   </button>
                   <button
                     type="button"
-                    class="border-2 rounded bg-red-500 p-0.5 text-lg"
+                    class="border rounded bg-[#C92A2A] p-3 text-lg text-white align-middle"
                   >
                     Supprimer
                   </button>
@@ -510,31 +559,33 @@
             </div>
           </article>
 
-          <article class="bg-blue-500 rounded-2xl p-2 gap-4 h-fit">
-            <h2 class="p-2">Desserts</h2>
+          <article class="rounded-2xl p-2 gap-4 h-fit bg-[#E8F3E8]">
+            <h2 class="p-2 text-4xl text-[#2E5339]">Desserts</h2>
             <div class="md:flex">
               <div
-                class="text-2xl bg-amber-50 rounded-2xl flex-col p-2 m-2 w-fit"
+                class="text-2xl rounded-2xl flex flex-col p-2 m-2 w-fit bg-[#F8FAFC] font-bold text-[#333333]"
               >
                 <img
                   src="assets/images/fruits.jpg"
                   alt=""
-                  class="rounded-2xl w-256 p-2 h-42"
+                  class="rounded-2xl w-5xl p-2 h-42"
                 />
-                <h4>Fruit de saison</h4>
-                <span>Prix</span>
-                <span>10DH</span>
-                <p>Bio</p>
+                <div class="p-2">
+                  <h4>Fruit de saison</h4>
+                  <span>Prix</span>
+                  <span>10DH</span>
+                  <p>Bio</p>
+                </div>
                 <div class="flex justify-between items-center p-2">
                   <button
                     type="button"
-                    class="border-2 rounded bg-emerald-500 p-0.5 text-lg"
+                    class="border rounded bg-[#277A3E] p-3 text-lg align-middle text-white"
                   >
                     Modifier
                   </button>
                   <button
                     type="button"
-                    class="border-2 rounded bg-red-500 p-0.5 text-lg"
+                    class="border rounded bg-[#C92A2A] p-3 text-lg text-white align-middle"
                   >
                     Supprimer
                   </button>
@@ -542,27 +593,29 @@
               </div>
 
               <div
-                class="text-2xl bg-amber-50 rounded-2xl flex-col p-2 m-2 w-fit"
+                class="text-2xl rounded-2xl flex flex-col p-2 m-2 w-fit bg-[#F8FAFC] font-bold text-[#333333]"
               >
                 <img
                   src="assets/images/fruits.jpg"
                   alt=""
-                  class="rounded-2xl w-256 p-2 h-42"
+                  class="rounded-2xl w-5xl p-2 h-42"
                 />
-                <h4>Fruit de saison</h4>
-                <span>Prix</span>
-                <span>10DH</span>
-                <p>Bio</p>
+                <div class="p-2">
+                  <h4>Fruit de saison</h4>
+                  <span>Prix</span>
+                  <span>10DH</span>
+                  <p>Bio</p>
+                </div>
                 <div class="flex justify-between items-center p-2">
                   <button
                     type="button"
-                    class="border-2 rounded bg-emerald-500 p-0.5 text-lg"
+                    class="border rounded bg-[#277A3E] p-3 text-lg align-middle text-white"
                   >
                     Modifier
                   </button>
                   <button
                     type="button"
-                    class="border-2 rounded bg-red-500 p-0.5 text-lg"
+                    class="border rounded bg-[#C92A2A] p-3 text-lg text-white align-middle"
                   >
                     Supprimer
                   </button>
@@ -570,27 +623,29 @@
               </div>
 
               <div
-                class="text-2xl bg-amber-50 rounded-2xl flex-col p-2 m-2 w-fit"
+                class="text-2xl rounded-2xl flex flex-col p-2 m-2 w-fit bg-[#F8FAFC] font-bold text-[#333333]"
               >
                 <img
                   src="assets/images/fruits.jpg"
                   alt=""
-                  class="rounded-2xl w-256 p-2 h-42"
+                  class="rounded-2xl w-5xl p-2 h-42"
                 />
-                <h4>Fruit de saison</h4>
-                <span>Prix</span>
-                <span>10DH</span>
-                <p>Bio</p>
+                <div class="p-2">
+                  <h4>Fruit de saison</h4>
+                  <span>Prix</span>
+                  <span>10DH</span>
+                  <p>Bio</p>
+                </div>
                 <div class="flex justify-between items-center p-2">
                   <button
                     type="button"
-                    class="border-2 rounded bg-emerald-500 p-0.5 text-lg"
+                    class="border rounded bg-[#277A3E] p-3 text-lg align-middle text-white"
                   >
                     Modifier
                   </button>
                   <button
                     type="button"
-                    class="border-2 rounded bg-red-500 p-0.5 text-lg"
+                    class="border rounded bg-[#C92A2A] p-3 text-lg text-white align-middle"
                   >
                     Supprimer
                   </button>
