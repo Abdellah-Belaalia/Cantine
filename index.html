@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -426,7 +426,7 @@
         <div class="grid gap-4 p-2">
           <article class="rounded-2xl p-2 gap-4 h-fit bg-[#E8F3E8]">
             <h2 class="p-2 text-4xl text-[#2E5339]">Les entrées</h2>
-            <div class="md:flex">
+            <div class="md:flex"> <!--parent div for cards-->
               <div
                 class="text-2xl rounded-2xl flex flex-col p-2 m-2 w-fit bg-[#F8FAFC] font-bold text-[#333333]"
               >
@@ -717,9 +717,12 @@
         id="pop-up"
         class="fixed bg-black/50 inset-0 flex items-center justify-center invisible"
       >
-        <div class="bg-amber-400 p-4 m-2 fixed rounded-md w-2/5 h-fit">
+        <div
+          id="form-stop"
+          class="bg-amber-400 p-4 m-2 fixed rounded-md w-fit h-fit"
+        >
           <!--ajouter hidden-->
-          <div class="flex justify-between items-center">
+          <div class="flex justify-between items-center gap-4">
             <h5 class="mb-4 pt-4 text-4xl text-white">Ajouter une recette</h5>
             <button
               id="btn-close"
@@ -736,61 +739,63 @@
               id="ptext"
               name="ptext"
               placeholder="Entrer le nom de plat"
+              required
+              minlength="3"
+              maxlength="30"
               value=""
             />
             <label for="catégorie">Catégorie :</label>
             <select
               name="catégorie"
               id="catégorie"
-              class="flex flex-col w-auto border border-black rounded p-2"
+              class="flex flex-col w-full border border-black rounded p-2"
+              required
             >
               <option value="" disabled selected>Choisir la catégorie</option>
               <option value="entree">Entrée</option>
               <option value="plat">Plat principal</option>
               <option value="dessert">Dessert</option>
             </select>
-            <div>
-              <h6>Selectionner un badge</h6>
-              <div>
-                <input type="checkbox" id="badge1" name="badge1" class="w-6 h-4"/>
-                <label for="badge1">Bio</label>
-              </div>
-              <div>
-                <input type="checkbox" id="badge2" name="badge2" class="w-6 h-4"/>
-                <label for="badge2">Végétarien</label>
-              </div>
-              <div>
-                <input type="checkbox" id="badge3" name="badge3" class="w-6 h-4"/>
-                <label for="badge3">Classique</label>
-              </div>
-            </div>
-            <label for="price" class="flex flex-col w-auto">Prix :</label>
+
+            <label for="badge">Badge qualitatif :</label>
+            <select
+              name="badge"
+              id="badge"
+              class="flex flex-col w-full border border-black rounded p-2"
+              required
+            >
+              <option value="" disabled selected>
+                Choisir un badge qualitatif
+              </option>
+              <option value="bio">Bio</option>
+              <option value="vegetarien">Végétarien</option>
+              <option value="classique">Classique</option>
+            </select>
+            <label for="price" class="flex flex-col w-full">Prix :</label>
             <input
               type="number"
               id="price"
               name="price"
               class="border rounded p-2"
-              placeholder="1 - 50"
-            />
-            <label for="quantité">Quantité:</label>
-            <input
-              type="number"
-              id="quantity"
-              name="quantité"
-              min="1"
-              class="border rounded p-2"
+              placeholder="Entre 1 et 50 DH"
+              min="5"
+              max="50"
+              required
             />
             <div class="flex justify-around mt-2">
-              <input
+              <button
                 type="submit"
-                value="Valider"
+                id="btn-valide"
                 class="bg-green-500 hover:bg-green-400 text-white rounded border-black border p-2"
-              />
-              <input
-                type="reset"
-                value="Effacer"
-                class="bg-red-500  hover:bg-red-400 text-white rounded border-black border p-2"
-              />
+              >
+                Valider
+              </button>
+              <button
+                id="annule"
+                class="bg-red-500 hover:bg-red-400 text-white rounded border-black border p-2 w-fit"
+              >
+                Annuler
+              </button>
             </div>
           </form>
         </div>
