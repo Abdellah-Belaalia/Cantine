@@ -40,6 +40,7 @@ formStop.addEventListener("submit", function (e) {
 
 //==================function ajouter===========================//
 let inptArray = [];
+let nextId = 1;
 formStop.addEventListener("submit", function (e) {
   e.preventDefault();
   let pltNom = document.getElementById("ptext").value;
@@ -48,16 +49,70 @@ formStop.addEventListener("submit", function (e) {
   let price = document.getElementById("price").value;
 
   let platInfo = {
+    id: nextId++,
     nomPlat: pltNom,
     categorieEl: categorie,
     badgeQual: badge,
     prixPlat: price,
   };
   inptArray.push(platInfo);
-  
-  document.getElementById("ptext").value = ""
-  document.getElementById("categorie").value = ""
-  document.getElementById("badge").value = ""
-  document.getElementById("price").value = ""
+  afficheCarte(platInfo);
+
+  document.getElementById("ptext").value = "";
+  document.getElementById("categorie").value = "";
+  document.getElementById("badge").value = "";
+  document.getElementById("price").value = "";
 });
 //=================================================================//
+
+//===============function Afficher=================================//µ
+const categories = {
+  Entrée: document.getElementById("entree-carte"),
+  "Plat principal": document.getElementById("platPrincip-carte"),
+  Dessert: document.getElementById("dessert-carte"),
+};
+function afficheCarte(platInfo) {
+  const container = categories[platInfo.categorieEl];
+  const card = document.createElement("div");
+  card.dataset.id = platInfo.id;
+  card.className =
+    "text-2xl rounded-2xl flex flex-col p-2 m-2 w-fit bg-[#F8FAFC] font-bold text-[#333333]";
+  card.innerHTML = `<div class="p-2">
+                  <h4>${platInfo.nomPlat}</h4>
+                  <span>Prix</span>
+                  <span>${platInfo.prixPlat}</span>
+                  <p>${platInfo.badgeQual}</p>
+                </div>
+                <div class="flex justify-between items-center p-2">
+                  <button
+                    type="button"
+                    class="border rounded bg-[#277A3E] p-3 text-lg align-middle text-white"
+                  >
+                    Modifier
+                  </button>
+                  <button
+                    type="button" id="supprimer"
+                    class="border rounded bg-[#C92A2A] p-3 text-lg text-white align-middle"
+                  >
+                    Supprimer
+                  </button>
+                </div>`;
+  container.appendChild(card);
+}
+  //=======================================================================//
+
+//=====================function Supprimer=================================//
+document.addEventListener("click", function (e){
+  if (e.target.id === "supprimer"){
+    console.log("delete")
+    let card = e.target.parentElement.parentElement;
+    let id = Number(card.dataset.id);
+    for (let i = 0; i < inptArray.length; i++){
+      if (inptArray[i].id === id){
+        inptArray.splice(i,1);
+        break;
+      }
+    }
+    card.remove()
+  }
+})

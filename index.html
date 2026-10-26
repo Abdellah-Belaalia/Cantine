@@ -410,8 +410,8 @@
         </div>
       </section>
 
-      <section class="shadow-2xl rounded-4xl p-4 m-2 h-fit">
-        <div class="flex justify-between p-2 flex-wrap gap-2">
+      <section class="shadow-2xl rounded-4xl p-4 m-2 h-fit flex flex-wrap">
+        <div class="flex justify-around p-2 flex-wrap gap-2">
           <h1 class="text-5xl">Recettes</h1>
           <button
             id="btn-ajout"
@@ -421,14 +421,13 @@
             Ajouter
           </button>
         </div>
-        <!--la forme doit être ici-->
 
         <div class="grid gap-4 p-2">
-          <article class="rounded-2xl p-2 gap-4 h-fit bg-[#E8F3E8]">
+          <article id="entree" class="rounded-2xl p-2 gap-4 h-fit bg-[#E8F3E8]">
             <h2 class="p-2 text-4xl text-[#2E5339]">Les entrées</h2>
-            <div class="md:flex"> <!--parent div for cards-->
+            <div id="entree-carte" class="flex flex-wrap md:flex"> <!--parent div for cards-->
               <div
-                class="text-2xl rounded-2xl flex flex-col p-2 m-2 w-fit bg-[#F8FAFC] font-bold text-[#333333]"
+                class="text-2xl rounded-2xl flex flex-col p-2 m-2 w-60 bg-[#F8FAFC] font-bold text-[#333333]"
               >
                 <img
                   src="assets/images/veloute.jpg"
@@ -442,16 +441,16 @@
                   <p>Végétarien</p>
                 </div>
 
-                <div class="flex justify-between items-center p-2">
+                <div class="flex justify-between items-center p-1">
                   <button
                     type="button"
-                    class="border rounded bg-[#277A3E] p-3 text-lg align-middle text-white"
+                    class="border rounded bg-[#277A3E] p-2 text-lg align-middle text-white"
                   >
                     Modifier
                   </button>
                   <button
-                    type="button"
-                    class="border rounded bg-[#C92A2A] p-3 text-lg text-white align-middle"
+                    type="button" id="supprimer"
+                    class="border rounded bg-[#C92A2A] p-2 text-lg text-white align-middle"
                   >
                     Supprimer
                   </button>
@@ -459,7 +458,7 @@
               </div>
 
               <div
-                class="flex text-2xl rounded-2xl flex-col p-2 m-2 w-fit bg-[#F8FAFC] font-bold text-[#333333]"
+                class="flex text-2xl rounded-2xl flex-col p-2 m-2 w-60 bg-[#F8FAFC] font-bold text-[#333333]"
               >
                 <img
                   src="assets/images/veloute.jpg"
@@ -475,13 +474,13 @@
                 <div class="flex justify-between items-center p-2">
                   <button
                     type="button"
-                    class="border rounded bg-[#277A3E] p-3 text-lg align-middle text-white"
+                    class="border rounded bg-[#277A3E] p-2 text-lg align-middle text-white"
                   >
                     Modifier
                   </button>
                   <button
-                    type="button"
-                    class="border rounded bg-[#C92A2A] p-3 text-lg text-white align-middle"
+                    type="button" id="supprimer"
+                    class="border rounded bg-[#C92A2A] p-2 text-lg text-white align-middle"
                   >
                     Supprimer
                   </button>
@@ -489,7 +488,7 @@
               </div>
 
               <div
-                class="text-2xl rounded-2xl flex flex-col p-2 m-2 w-fit bg-[#F8FAFC] font-bold text-[#333333]"
+                class="text-2xl rounded-2xl flex flex-col p-2 m-2 w-60 bg-[#F8FAFC] font-bold text-[#333333]"
               >
                 <img
                   src="assets/images/veloute.jpg"
@@ -505,13 +504,13 @@
                 <div class="flex justify-between items-center p-2">
                   <button
                     type="button"
-                    class="border rounded bg-[#277A3E] p-3 text-lg align-middle text-white"
+                    class="border rounded bg-[#277A3E] p-2 text-lg align-middle text-white"
                   >
                     Modifier
                   </button>
                   <button
                     type="button"
-                    class="border rounded bg-[#C92A2A] p-3 text-lg text-white align-middle"
+                    class="border rounded bg-[#C92A2A] p-2 text-lg text-white align-middle"
                   >
                     Supprimer
                   </button>
@@ -520,9 +519,9 @@
             </div>
           </article>
 
-          <article class="rounded-2xl p-2 gap-4 h-fit bg-[#E8F3E8]">
+          <article id="platPrincip" class="rounded-2xl p-2 gap-4 h-fit bg-[#E8F3E8]">
             <h2 class="p-2 text-4xl text-[#2E5339]">Plat Principal</h2>
-            <div class="md:flex">
+            <div id="platPrincip-carte" class="md:flex">
               <div
                 class="text-2xl rounded-2xl flex flex-col p-2 m-2 w-fit bg-[#F8FAFC] font-bold text-[#333333]"
               >
@@ -616,9 +615,9 @@
             </div>
           </article>
 
-          <article class="rounded-2xl p-2 gap-4 h-fit bg-[#E8F3E8]">
+          <article id="dessert" class="rounded-2xl p-2 gap-4 h-fit bg-[#E8F3E8]">
             <h2 class="p-2 text-4xl text-[#2E5339]">Desserts</h2>
-            <div class="md:flex">
+            <div id="dessert-carte" class="md:flex">
               <div
                 class="text-2xl rounded-2xl flex flex-col p-2 m-2 w-fit bg-[#F8FAFC] font-bold text-[#333333]"
               >
@@ -744,7 +743,7 @@
               maxlength="30"
               value=""
             />
-            <label for="catégorie">Catégorie :</label>
+            <label for="categorie">Catégorie :</label>
             <select
               name="catégorie"
               id="categorie"
