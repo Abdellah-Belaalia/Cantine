@@ -142,6 +142,27 @@ document.addEventListener("click", function (e) {
       }
     }
     card.remove();
+
+    const repasCards = document.querySelectorAll(".repas-cartes");
+    for (let i = 0; i < repasCards.length; i++) {
+      const selects = repasCards[i].querySelectorAll("select");
+
+      for (let j = 0; j < selects.length; j++) {
+        const select = selects[j];
+
+        if (select.value === String(id)) {
+          select.value = "";
+          select.dataset.ancienValeur = "";
+        }
+        for (let k = select.options.length - 1; k >= 0; k--) {
+          if (select.options[k].value === String(id)) {
+            select.remove(k);
+          }
+        }
+      }
+      calculTotal(repasCards[i]);
+    }
+    mettreAjourMeal();
   }
 });
 //==========================================================================//
@@ -259,14 +280,51 @@ function verifierBudget(repasCard, select) {
 //========================               ==========================//
 const repasCards = document.querySelectorAll(".repas-cartes");
 
-for(let i =0; i < repasCards.length; i++){
+for (let i = 0; i < repasCards.length; i++) {
   const repasCard = repasCards[i];
   const selects = repasCard.querySelectorAll("select");
 
-  for (let j = 0; j < selects.length; j++){
-    selects[j].addEventListener("change", function (){
+  for (let j = 0; j < selects.length; j++) {
+    selects[j].addEventListener("change", function () {
       verifierBudget(repasCard, selects[j]);
     });
   }
   calculTotal(repasCard);
+}
+//=====================             ============================//
+function mettreAjourMeal() {
+  const repasCards = document.querySelectorAll(".repas-cartes");
+
+  for (let i = 0; i < repasCards.length; i++) {
+    const selects = repasCards[i].querySelectorAll("select");
+
+    for (let j = 0; j < selects.length; j++) {
+      const select = selects[j];
+
+      for (let k = 0; k < select.options.length; k++) {
+        const option = select.options[k];
+
+        if (option.value === "") {
+          continue;
+        }
+        option.disabled = false;
+
+        for (let a = 0; a < repasCards.length; a++) {
+          if (a == i) {
+            continue;
+          }
+          const autresSelects = repasCards[a].querySelectorAll("select");
+
+          for (let b = 0; b < autresSelects.length; b++) {
+            if (autresSelects[b].value === option.value) {
+              option.disabled = true;
+            }
+          }
+        }
+        if (select.value === option.value) {
+          option.disabled = false;
+        }
+      }
+    }
+  }
 }
