@@ -80,7 +80,7 @@ formStop.addEventListener("submit", function (e) {
     };
     inptArray.push(platInfo);
     afficheCarte(platInfo);
-    console.log(platInfo);
+    choisisRecette();
   }
 
   document.getElementById("ptext").value = "";
@@ -145,7 +145,7 @@ document.addEventListener("click", function (e) {
   }
 });
 //==========================================================================//
-//========================
+//========================function modifier=================================//
 document.addEventListener("click", function (e) {
   if (e.target.id === "modifier") {
     carteModifier = e.target.parentElement.parentElement;
@@ -168,3 +168,105 @@ document.addEventListener("click", function (e) {
     }
   }
 });
+//======================================================================//
+//======================function choisir==============================//
+function choisisRecette() {
+  const repasCards = document.querySelectorAll(".repas-cartes");
+
+  for (let i = 0; i < repasCards.length; i++) {
+    const repasCard = repasCards[i];
+
+    const entree = repasCard.querySelector(".entree");
+    const platPrincipale = repasCard.querySelector(".plat-principale");
+    const dessert = repasCard.querySelector(".dessert");
+
+    entree.innerHTML = "";
+    platPrincipale.innerHTML = "";
+    dessert.innerHTML = "";
+
+    const optionEntree = document.createElement("option");
+    optionEntree.value = "";
+    optionEntree.textContent = "Choisir une entrée";
+    entree.appendChild(optionEntree);
+
+    const optionPlat = document.createElement("option");
+    optionPlat.value = "";
+    optionPlat.textContent = "Choisir un plat principale";
+    platPrincipale.appendChild(optionPlat);
+
+    const optionDessert = document.createElement("option");
+    optionDessert.value = "";
+    optionDessert.textContent = "Choisir un dessert";
+    dessert.appendChild(optionDessert);
+
+    for (let j = 0; j < inptArray.length; j++) {
+      const plat = inptArray[j];
+
+      const option = document.createElement("option");
+      option.value = plat.id;
+      option.textContent = plat.nomPlat;
+
+      if (plat.categorieEl === "Entrée") {
+        entree.appendChild(option);
+      } else if (plat.categorieEl === "Plat principal") {
+        platPrincipale.appendChild(option);
+      } else if (plat.categorieEl === "Dessert") {
+        dessert.appendChild(option);
+      }
+    }
+
+    repasCard.querySelector("h4").textContent = `Repas N° ${i + 1}`;
+  }
+}
+//================================================================//
+//===================function calcutorTpatal======================//
+function calculTotal(repasCard) {
+  let total = 0;
+
+  let entreeId = repasCard.querySelector(".entree").value;
+  let platId = repasCard.querySelector(".plat-principale").value;
+  let dessertId = repasCard.querySelector(".dessert").value;
+
+  for (let i = 0; i < inptArray.length; i++) {
+    if (
+      inptArray[i].id === Number(entreeId) ||
+      inptArray[i].id === Number(platId) ||
+      inptArray[i].id === Number(dessertId)
+    ) {
+      total += Number(inptArray[i].prixPlat);
+    }
+  }
+  repasCard.querySelector(".repas-total").textContent = total + "/50 DH";
+
+  return total;
+}
+//=================================================================//
+//======================verifier le total =========================//
+function verifierBudget(repasCard, select) {
+  let ancienValeur = select.dataset.ancienValeur || "";
+
+  let total = calculTotal(repasCard);
+
+  if (total > 50) {
+    alert("Budget de journée est dépasser !!");
+    select.value = ancienValeur;
+    calculTotal(repasCard);
+  } else {
+    select.dataset.ancienValeur = select.value;
+  }
+}
+//=================================================================//
+//========================               ==========================//
+const repasCards = document.querySelectorAll(".repas-cartes");
+
+for(let i =0; i < repasCards.length; i++){
+  const repasCard = repasCards[i];
+  const selects = repasCard.querySelectorAll("select");
+
+  for (let j = 0; j < selects.length; j++){
+    selects[j].addEventListener("change", function (){
+      verifierBudget(repasCard, selects[j]);
+    });
+  }
+  calculTotal(repasCard);
+}
