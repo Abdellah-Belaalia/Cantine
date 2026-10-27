@@ -138,6 +138,13 @@ document.addEventListener("click", function (e) {
   if (e.target.id === "supprimer") {
     let card = e.target.parentElement.parentElement;
     let id = Number(card.dataset.id);
+
+    const confirmation = confirm("Voulez-vous vraiment supprimer cette recette");
+
+    if(confirmation === false){
+      return;
+    }
+
     for (let i = 0; i < inptArray.length; i++) {
       if (inptArray[i].id === id) {
         inptArray.splice(i, 1);
