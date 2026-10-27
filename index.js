@@ -361,3 +361,21 @@ for (let i = 0; i < inptArray.length; i++){
 }
 choisisRecette();
 mettreAjourMeal();
+//===================Reserve button===============================//
+document.addEventListener("click", function(e){
+  if (e.target.textContent.trim() === "En réserve"){
+    const card = e.target.closest(".repas-cartes");
+
+    if (!card){
+      return;
+    }
+    card.classList.add("graysclae", "opacity-60");
+    const selects = card.querySelectorAll("select");
+    for (let i = 0;i< selects.length;i++){
+      selects[i].disabled = true;
+    }
+    e.target.textContent = "Reserve";
+    e.target.disabled=true;
+  }
+});
+//============================================================//
