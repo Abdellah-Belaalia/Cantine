@@ -58,6 +58,8 @@ formStop.addEventListener("submit", function (e) {
         inptArray[i].badgeQual = badge;
         inptArray[i].prixPlat = price;
 
+        saverecipe();
+
         let platModifier = inptArray[i];
 
         carteModifier.remove();
@@ -79,6 +81,7 @@ formStop.addEventListener("submit", function (e) {
       prixPlat: price,
     };
     inptArray.push(platInfo);
+    saverecipe();
     afficheCarte(platInfo);
     choisisRecette();
   }
@@ -138,6 +141,7 @@ document.addEventListener("click", function (e) {
     for (let i = 0; i < inptArray.length; i++) {
       if (inptArray[i].id === id) {
         inptArray.splice(i, 1);
+        saverecipe();
         break;
       }
     }
@@ -181,6 +185,8 @@ document.addEventListener("click", function (e) {
         document.getElementById("categorie").value = plat.categorieEl;
         document.getElementById("badge").value = plat.badgeQual;
         document.getElementById("price").value = plat.prixPlat;
+
+        saverecipe();
 
         popup.classList.remove("invisible");
 
@@ -291,7 +297,7 @@ for (let i = 0; i < repasCards.length; i++) {
   }
   calculTotal(repasCard);
 }
-//=====================             ============================//
+//========================mettre a jour =============================//
 function mettreAjourMeal() {
   const repasCards = document.querySelectorAll(".repas-cartes");
 
@@ -328,3 +334,30 @@ function mettreAjourMeal() {
     }
   }
 }
+//===================Starage=====================================//
+function saverecipe(){
+  localStorage.setItem("recettes", JSON.stringify(inptArray));
+}
+
+function chargerecipe(){
+  const recetteSave = localStorage.getItem("recettes");
+
+  if (recetteSave !== null){
+    inptArray = JSON.parse(recetteSave);
+  }
+}
+//===============================================================//
+//====================get local storage==========================//
+chargerecipe();
+
+for (let i = 0; i < inptArray.length; i++){
+  if (inptArray[i].id >= nextId){
+    nextId = inptArray[i].id + 1;
+    }
+  }
+
+  for (let i = 0; i < inptArray.length; i++){8
+  afficheCarte(inptArray[i]);
+}
+choisisRecette();
+mettreAjourMeal();
